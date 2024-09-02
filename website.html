@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacked by mR_1nf1n17y〄</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #ff0000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            user-select: none;
+            cursor: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 42px;
+            color: #ff0000;
+            letter-spacing: 2px;
+            margin: 0;
+            padding: 0;
+            border-bottom: 2px solid #ff0000;
+            padding-bottom: 10px;
+        }
+
+        main {
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        main p {
+            font-size: 24px;
+            color: #ffffff;
+            line-height: 1.5;
+            margin: 20px 0;
+        }
+
+        main p.fuck {
+            font-size: 28px;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        .simulation-screen {
+            position: absolute;
+            font-size: 24px;
+            color: #ffffff;
+            display: none;
+            transition: opacity 0.2s ease-in-out;
+            opacity: 0;
+        }
+
+        .mr_1nf1n17y〄 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            word-wrap: break-word;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        footer p {
+            font-size: 18px;
+            color: #ff0000;
+            letter-spacing: 1px;
+        }
+
+        #mainContent {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameOverScreen" class="simulation-screen">GAME OVER</div>
+    <div id="hackedScreen" class="simulation-screen">HACKED</div>
+    <div id="byScreen" class="simulation-screen">BY</div>
+    <div id="hackerNameScreen" class="simulation-screen">mR_1nf1n17y〄</div>
+    <div id="mainContent">
+        <header>
+            <h1>Hacked by mR_1nf1n17y〄</h1>
+        </header>
+
+        <main>
+            <p class="fuck">Your website has been hacked.</p>
+            <div class="mr_1nf1n17y〄">
+               <br>mR_1nf1n17y〄<br>
+                <code>©2020</code>
+            </div>
+        </main>
+
+        <footer>
+            <p>The game is over</p>
+        </footer>
+    </div>
+
+    <script>
+        const screens = [
+            { id: 'gameOverScreen', duration: 300 },
+            { id: 'hackedScreen', duration: 300 },
+            { id: 'byScreen', duration: 200 },
+            { id: 'hackerNameScreen', duration: 400 }
+        ];
+
+        function showScreen(screenId, duration) {
+            return new Promise(resolve => {
+                const screen = document.getElementById(screenId);
+                screen.style.display = 'block';
+                screen.style.opacity = 1;
+
+                setTimeout(() => {
+                    screen.style.opacity = 0;
+                    setTimeout(() => {
+                        screen.style.display = 'none';
+                        resolve();
+                    }, 200);
+                }, duration);
+            });
+        }
+
+        async function startSimulation() {
+            for (const screen of screens) {
+                await showScreen(screen.id, screen.duration);
+            }
+
+            document.getElementById('mainContent').style.opacity = 1; // Show main content
+            document.body.style.cursor = 'auto'; // Restore cursor
+        }
+
+        window.onload = function() {
+            document.body.style.opacity = 1;
+            startSimulation();
+        };
+    </script>
+</body>
+</html>
